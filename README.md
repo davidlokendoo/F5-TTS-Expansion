@@ -6,16 +6,19 @@ This project fine-tunes the F5-TTS model to add a new language, using a pre-trai
 # create a python 3.10 env
 conda create --name f5-tts python=3.10
 conda activate f5-tts
-
-# Install PyTorch with your CUDA version, e.g.
+```
+## Install PyTorch with your CUDA version
+```
 pip install torch==2.3.0+cu118 torchaudio==2.3.0+cu118 --extra-index-url https://download.pytorch.org/whl/cu118
-
-#Install PyTorch (CPU Version) on Mac
+```
+## Install PyTorch (CPU Version) on Mac
+```
 pip install torch==2.3.0 torchaudio==2.3.0
-
-#git clone the original repository
+```
+# Git clone the original repository
+```
 git clone https://github.com/SWivid/F5-TTS.git
 cd F5-TTS
 pip install -e .
-
+```
 
