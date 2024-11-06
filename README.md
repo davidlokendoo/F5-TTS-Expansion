@@ -21,4 +21,17 @@ git clone https://github.com/SWivid/F5-TTS.git
 cd F5-TTS
 pip install -e .
 ```
+## Create a dataset
+1. Create a directory for your data within the f5-tts/data folder. For example: f5-tts/data/new_language.
+2. Inside your new language directory, create a folder named wavs to store your audio files. For example: f5-tts/data/new_language/wavs.
 
+At this point, your file structure should look like this:
+```
+/F5-TTS
+|-- data/
+|   |-- new_language_pinyin/
+|   |   |-- wavs/
+|   |   |   |-- audio_001.wav
+|   |   |   |-- audio_002.wav
+|   |   |   |-- ...
+```
