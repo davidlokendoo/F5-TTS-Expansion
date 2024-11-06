@@ -35,7 +35,7 @@ At this point, your file structure should look like this:
 |   |   |   |-- audio_002.wav
 |   |   |   |-- ...
 ```
-3. Use wav_and_metadata.py to convert your MP3 files to WAV format and generate a metadata.csv file.
+3. Use `wav_and_metadata.py` to convert your MP3 files to WAV format and generate a metadata.csv file.
    
 * Specify the relative paths for your MP3 file (source audio in MP3 format), WAV file (destination in the wavs directory you created), and metadata.csv   file.
 * After running the script, your metadata.csv file should be structured like this:
