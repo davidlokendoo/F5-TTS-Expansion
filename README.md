@@ -15,7 +15,7 @@ pip install torch==2.3.0+cu118 torchaudio==2.3.0+cu118 --extra-index-url https:/
 ```
 pip install torch==2.3.0 torchaudio==2.3.0
 ```
-# Git clone the original repository
+## Clone the original repository and install the required dependencies
 ```
 git clone https://github.com/SWivid/F5-TTS.git
 cd F5-TTS
