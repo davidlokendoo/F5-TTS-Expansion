@@ -31,21 +31,32 @@ At this point, your file structure should look like this:
 |-- data/
 |   |-- new_language_pinyin/
 |   |   |-- wavs/
-|   |   |   |-- audio_001.wav
-|   |   |   |-- audio_002.wav
+|   |   |   |-- ...
+|   |   |   |-- ...
 |   |   |   |-- ...
 ```
-3. Use `wav_and_metadata.py` to convert your MP3 files to WAV format and generate a metadata.csv file.
+3. Use `wav_and_metadata.py` to convert your MP3 files to WAV format and generate a `metadata.csv` file.
    
-* Specify the relative paths for your MP3 file (source audio in MP3 format), WAV file (destination in the wavs directory you created), and metadata.csv   file.
+* Specify the relative paths for your MP3 file (source audio in MP3 format), WAV file (destination in the `wavs` directory you created), and `metadata.csv` file, and then run the following command:
 ```
 python wav_and_metadata.py
 ```
-* After running the script, your metadata.csv file should be structured like this:
+* After running the script, your `metadata.csv` file should be structured like this:
 ```
 audio_file|text
 wavs/audio_001.wav|tenían prohibida por ley la presencia en teatros y aglomeraciones públicas
 wavs/audio_002.wav|Cómo operan el camarote claro que no nada de eso
+```
+Once your `metadata.csv` file is created and your MP3 files are converted to WAV, your file structure should look like this:
+```
+/F5-TTS
+|-- data/
+|   |-- new_language_pinyin/
+|   |   |-- metadata.csv
+|   |   |-- wavs/
+|   |   |   |-- audio_001.wav
+|   |   |   |-- audio_002.wav
+|   |   |   |-- ...
 ```
    
 
