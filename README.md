@@ -41,8 +41,8 @@ At this point, your file structure should look like this:
 * After running the script, your metadata.csv file should be structured like this:
 ```
 audio_file|text
-wavs/audio_001.wav: tenían prohibida por ley la presencia en teatros y aglomeraciones públicas.
-wavs/audio_002.wav: Cómo operan el camarote claro que no nada de eso.
+wavs/audio_001.wav|tenían prohibida por ley la presencia en teatros y aglomeraciones públicas
+wavs/audio_002.wav|Cómo operan el camarote claro que no nada de eso
 ```
    
 
