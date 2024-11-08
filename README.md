@@ -64,9 +64,22 @@ The `prepare_csv_wavs.py` script requires both an input and output directory. Sp
 ```
 cd /F5-TTS/src/f5_tts/train/datasets
 python prepare_csv_wavs.py /F5-TTS/data/New_language_pinyin /F5-TTS/data/New_language_pinyin
-```   
-
-
+```
+Three new files should have been created: `raw.arrow`, `duration.json`, and `vocab.txt`.
+If the `duration.json` file is empty, it likely means the input path was not set correctly. At this point, the file structure should look like this:
+```
+/F5-TTS
+|-- data/
+|   |-- new_language_pinyin/
+|   |   |-- raw.arrow
+|   |   |-- duration.json
+|   |   |-- vocab.txt
+|   |   |-- metadata.csv
+|   |   |-- wavs/
+|   |   |   |-- audio_001.wav
+|   |   |   |-- audio_002.wav
+|   |   |   |-- ...
+```
 
 
 
