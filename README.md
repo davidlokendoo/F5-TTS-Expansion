@@ -62,7 +62,7 @@ Once your `metadata.csv` file is created and your MP3 files are converted to WAV
 
 The `prepare_csv_wavs.py` script requires both an input and output directory. Specify the directory where your `metadata.csv` and WAV files are located when running the script.
 ```
-cd /F5-TTS/src/f5_tts/train/datasets
+cd F5-TTS/src/f5_tts/train/datasets
 python prepare_csv_wavs.py /F5-TTS/data/New_language_pinyin /F5-TTS/data/New_language_pinyin
 ```
 Three new files should have been created: `raw.arrow`, `duration.json`, and `vocab.txt`.
