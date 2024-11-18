@@ -29,7 +29,7 @@ At this point, your file structure should look like this:
 ```
 /F5-TTS
 |-- data/
-|   |-- new_language_pinyin/
+|   |-- new_language/
 |   |   |-- wavs/
 |   |   |   |-- ...
 |   |   |   |-- ...
@@ -51,7 +51,7 @@ Once your `metadata.csv` file is created and your MP3 files are converted to WAV
 ```
 /F5-TTS
 |-- data/
-|   |-- new_language_pinyin/
+|   |-- new_language/
 |   |   |-- metadata.csv
 |   |   |-- wavs/
 |   |   |   |-- audio_001.wav
@@ -63,14 +63,14 @@ Once your `metadata.csv` file is created and your MP3 files are converted to WAV
 The `prepare_csv_wavs.py` script requires both an input and output directory. Specify the directory where your `metadata.csv` and WAV files are located when running the script.
 ```
 cd F5-TTS/src/f5_tts/train/datasets
-python prepare_csv_wavs.py /F5-TTS/data/New_language_pinyin /F5-TTS/data/New_language_pinyin
+python prepare_csv_wavs.py /F5-TTS/data/new_language_pinyin /F5-TTS/data/new_language_pinyin
 ```
 Three new files should have been created: `raw.arrow`, `duration.json`, and `vocab.txt`.
 If the `duration.json` file is empty, it likely means the input path was not set correctly. At this point, the file structure should look like this:
 ```
 /F5-TTS
 |-- data/
-|   |-- new_language_pinyin/
+|   |-- new_language/
 |   |   |-- raw.arrow
 |   |   |-- duration.json
 |   |   |-- vocab.txt
@@ -94,7 +94,7 @@ Make sure the directory structure matches the expected format before moving on.
 |--ckpts/
 |   |-- model_1200000.pt
 |-- data/
-|   |-- new_language_pinyin/
+|   |-- new_language/
 |   |   |-- raw.arrow
 |   |   |-- duration.json
 |   |   |-- vocab.txt
@@ -104,4 +104,44 @@ Make sure the directory structure matches the expected format before moving on.
 |   |   |   |-- audio_002.wav
 |   |   |   |-- ...
 ```
+2. Start training
 
+Start the training process by specifying parameters for the script; if parameters are omitted, default values will be used.
+```
+# Define parameters
+exp_name = "F5TTS_Base"
+learning_rate = 1e-05
+batch_size_per_gpu = 1
+batch_size_type = "frame"
+max_samples = 25
+grad_accumulation_steps = 1
+max_grad_norm = 1
+epochs = 5
+num_warmup_updates = 2
+save_per_updates = 20
+last_per_steps = 10
+dataset_name = "test5"
+finetune = True
+logger = "tensorboard"
+tokenizer = "pinyin"
+pretrained_model_path = "data/new_language/model_last.pt"
+
+# Build and run the command
+!accelerate launch src/f5_tts/train/finetune_cli.py \
+    --exp_name {exp_name} \
+    --learning_rate {learning_rate} \
+    --batch_size_per_gpu {batch_size_per_gpu} \
+    --batch_size_type {batch_size_type} \
+    --max_samples {max_samples} \
+    --grad_accumulation_steps {grad_accumulation_steps} \
+    --max_grad_norm {max_grad_norm} \
+    --epochs {epochs} \
+    --num_warmup_updates {num_warmup_updates} \
+    --save_per_updates {save_per_updates} \
+    --last_per_steps {last_per_steps} \
+    --dataset_name {dataset_name} \
+    --finetune {finetune} \
+    --tokenizer {tokenizer} # \
+    # --logger {logger} \
+    # --pretrain {pretrained_model_path}
+```
