@@ -145,3 +145,11 @@ pretrained_model_path = "data/new_language/model_last.pt"
     # --logger {logger} \
     # --pretrain {pretrained_model_path}
 ```
+If you encounter a division by zero error or other issues during training, try adjusting the batch size, max samples, or other parameters to better suit your system's capabilities and dataset size.
+
+
+
+
+
+
+
