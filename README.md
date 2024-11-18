@@ -1,8 +1,7 @@
 # F5-TTS-Finetuning
 This project fine-tunes the F5-TTS model to add a new language, using a pre-trained base to enhance multilingual capabilities.
 
-You can find more information on the official F5-TTS repository: https://github.com/SWivid/F5-TTS
-
+You should be able to follow this tutorial for fine-tuning. If you need to access the official F5-TTS repository, follow this link: https://github.com/SWivid/F5-TTS.
 # Installation
 ```
 # create a python 3.10 env
