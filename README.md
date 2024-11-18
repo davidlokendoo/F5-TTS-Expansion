@@ -80,7 +80,28 @@ If the `duration.json` file is empty, it likely means the input path was not set
 |   |   |   |-- audio_002.wav
 |   |   |   |-- ...
 ```
-
-
-
+## Proceed to Training
+1. Create the Base Directory
+Start by creating an `F5-TTS_BASE` directory within your ckpts directory.
+2. Download the Pre-trained Base Model
+Next, download the base model required for fine-tuning. Use the following command:
+```
+curl -L -o ckpts/F5-TTS_BASE/model_1200000.pt "https://huggingface.co/SWivid/F5-TTS/resolve/main/F5TTS_Base/model_1200000.pt?download=true"
+```
+Make sure the directory structure matches the expected format before moving on.
+```
+/F5-TTS
+|--ckpts/
+|   |-- model_1200000.pt
+|-- data/
+|   |-- new_language_pinyin/
+|   |   |-- raw.arrow
+|   |   |-- duration.json
+|   |   |-- vocab.txt
+|   |   |-- metadata.csv
+|   |   |-- wavs/
+|   |   |   |-- audio_001.wav
+|   |   |   |-- audio_002.wav
+|   |   |   |-- ...
+```
 
