@@ -1,4 +1,4 @@
-# F5-TTS-Expansion
+# F5-TTS-Finetuning
 This project fine-tunes the F5-TTS model to add a new language, using a pre-trained base to enhance multilingual capabilities.
 
 # Installation
