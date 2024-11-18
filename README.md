@@ -93,7 +93,8 @@ Make sure the directory structure matches the expected format before moving on.
 ```
 /F5-TTS
 |--ckpts/
-|   |-- model_1200000.pt
+|   |-- F5-TTS-BASE/
+|   |   |-- model_1200000.pt
 |-- data/
 |   |-- new_language/
 |   |   |-- raw.arrow
@@ -128,7 +129,7 @@ tokenizer = "pinyin"
 pretrained_model_path = "data/new_language/model_last.pt"
 
 # Build and run the command
-!accelerate launch src/f5_tts/train/finetune_cli.py \
+accelerate launch src/f5_tts/train/finetune_cli.py \
     --exp_name {exp_name} \
     --learning_rate {learning_rate} \
     --batch_size_per_gpu {batch_size_per_gpu} \
