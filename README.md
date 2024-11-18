@@ -92,7 +92,7 @@ curl -L -o ckpts/F5-TTS_BASE/model_1200000.pt "https://huggingface.co/SWivid/F5-
 Make sure the directory structure matches the expected format before moving on.
 ```
 /F5-TTS
-|--ckpts/
+|-- ckpts/
 |   |-- F5-TTS-BASE/
 |   |   |-- model_1200000.pt
 |-- data/
